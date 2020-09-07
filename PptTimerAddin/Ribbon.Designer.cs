@@ -39,14 +39,18 @@
             this.checkBox = this.Factory.CreateRibbonCheckBox();
             this.editBox = this.Factory.CreateRibbonEditBox();
             this.button1 = this.Factory.CreateRibbonButton();
+            this.group2 = this.Factory.CreateRibbonGroup();
+            this.ColorSetButton = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
+            this.group2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
             // 
             this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tab1.Groups.Add(this.group1);
+            this.tab1.Groups.Add(this.group2);
             this.tab1.Label = "TabAddIns";
             this.tab1.Name = "tab1";
             // 
@@ -78,6 +82,17 @@
             this.button1.Label = "";
             this.button1.Name = "button1";
             // 
+            // group2
+            // 
+            this.group2.Items.Add(this.ColorSetButton);
+            this.group2.Label = "各種設定";
+            this.group2.Name = "group2";
+            // 
+            // ColorSetButton
+            // 
+            this.ColorSetButton.Label = "色の設定";
+            this.ColorSetButton.Name = "ColorSetButton";
+            // 
             // Ribbon
             // 
             this.Name = "Ribbon";
@@ -88,6 +103,8 @@
             this.tab1.PerformLayout();
             this.group1.ResumeLayout(false);
             this.group1.PerformLayout();
+            this.group2.ResumeLayout(false);
+            this.group2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -99,6 +116,8 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox checkBox;
         internal Microsoft.Office.Tools.Ribbon.RibbonEditBox editBox;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton ColorSetButton;
     }
 
     partial class ThisRibbonCollection
