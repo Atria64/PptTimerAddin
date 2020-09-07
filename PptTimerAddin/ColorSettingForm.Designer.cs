@@ -33,13 +33,13 @@
             this.panel2 = new System.Windows.Forms.Panel();
             this.label6 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
-            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.HighlightColorComboBox = new System.Windows.Forms.ComboBox();
             this.label4 = new System.Windows.Forms.Label();
-            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.BackGroundColorComboBox = new System.Windows.Forms.ComboBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.CharColorComboBox = new System.Windows.Forms.ComboBox();
             this.CancelButton = new System.Windows.Forms.Button();
             this.ApplyButton = new System.Windows.Forms.Button();
             this.panel1.SuspendLayout();
@@ -49,13 +49,13 @@
             // panel1
             // 
             this.panel1.Controls.Add(this.panel2);
-            this.panel1.Controls.Add(this.comboBox3);
+            this.panel1.Controls.Add(this.HighlightColorComboBox);
             this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.comboBox2);
+            this.panel1.Controls.Add(this.BackGroundColorComboBox);
             this.panel1.Controls.Add(this.label3);
             this.panel1.Controls.Add(this.label2);
             this.panel1.Controls.Add(this.label1);
-            this.panel1.Controls.Add(this.comboBox1);
+            this.panel1.Controls.Add(this.CharColorComboBox);
             this.panel1.Controls.Add(this.CancelButton);
             this.panel1.Controls.Add(this.ApplyButton);
             this.panel1.Location = new System.Drawing.Point(12, 12);
@@ -92,13 +92,14 @@
             this.label5.TabIndex = 0;
             this.label5.Text = "7：00";
             // 
-            // comboBox3
+            // HighlightColorComboBox
             // 
-            this.comboBox3.FormattingEnabled = true;
-            this.comboBox3.Location = new System.Drawing.Point(61, 151);
-            this.comboBox3.Name = "comboBox3";
-            this.comboBox3.Size = new System.Drawing.Size(113, 20);
-            this.comboBox3.TabIndex = 7;
+            this.HighlightColorComboBox.FormattingEnabled = true;
+            this.HighlightColorComboBox.Location = new System.Drawing.Point(61, 151);
+            this.HighlightColorComboBox.Name = "HighlightColorComboBox";
+            this.HighlightColorComboBox.Size = new System.Drawing.Size(113, 20);
+            this.HighlightColorComboBox.TabIndex = 2;
+            this.HighlightColorComboBox.SelectedIndexChanged += new System.EventHandler(this.HighlightColorComboBox_SelectedIndexChanged);
             // 
             // label4
             // 
@@ -110,13 +111,14 @@
             this.label4.TabIndex = 6;
             this.label4.Text = "強調色";
             // 
-            // comboBox2
+            // BackGroundColorComboBox
             // 
-            this.comboBox2.FormattingEnabled = true;
-            this.comboBox2.Location = new System.Drawing.Point(61, 103);
-            this.comboBox2.Name = "comboBox2";
-            this.comboBox2.Size = new System.Drawing.Size(113, 20);
-            this.comboBox2.TabIndex = 5;
+            this.BackGroundColorComboBox.FormattingEnabled = true;
+            this.BackGroundColorComboBox.Location = new System.Drawing.Point(61, 103);
+            this.BackGroundColorComboBox.Name = "BackGroundColorComboBox";
+            this.BackGroundColorComboBox.Size = new System.Drawing.Size(113, 20);
+            this.BackGroundColorComboBox.TabIndex = 1;
+            this.BackGroundColorComboBox.SelectedIndexChanged += new System.EventHandler(this.BackGroundColorComboBox_SelectedIndexChanged);
             // 
             // label3
             // 
@@ -148,20 +150,22 @@
             this.label1.TabIndex = 2;
             this.label1.Text = "文字色";
             // 
-            // comboBox1
+            // CharColorComboBox
             // 
-            this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(61, 56);
-            this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(113, 20);
-            this.comboBox1.TabIndex = 1;
+            this.CharColorComboBox.FormattingEnabled = true;
+            this.CharColorComboBox.ItemHeight = 12;
+            this.CharColorComboBox.Location = new System.Drawing.Point(61, 56);
+            this.CharColorComboBox.Name = "CharColorComboBox";
+            this.CharColorComboBox.Size = new System.Drawing.Size(113, 20);
+            this.CharColorComboBox.TabIndex = 0;
+            this.CharColorComboBox.SelectedIndexChanged += new System.EventHandler(this.CharColorComboBox_SelectedIndexChanged);
             // 
             // CancelButton
             // 
             this.CancelButton.Location = new System.Drawing.Point(116, 322);
             this.CancelButton.Name = "CancelButton";
             this.CancelButton.Size = new System.Drawing.Size(75, 23);
-            this.CancelButton.TabIndex = 0;
+            this.CancelButton.TabIndex = 4;
             this.CancelButton.Text = "キャンセル";
             this.CancelButton.UseVisualStyleBackColor = true;
             // 
@@ -170,7 +174,7 @@
             this.ApplyButton.Location = new System.Drawing.Point(35, 322);
             this.ApplyButton.Name = "ApplyButton";
             this.ApplyButton.Size = new System.Drawing.Size(75, 23);
-            this.ApplyButton.TabIndex = 0;
+            this.ApplyButton.TabIndex = 3;
             this.ApplyButton.Text = "適用";
             this.ApplyButton.UseVisualStyleBackColor = true;
             // 
@@ -182,6 +186,7 @@
             this.Controls.Add(this.panel1);
             this.Name = "ColorSettingForm";
             this.Text = "ColorSettingForm";
+            this.Load += new System.EventHandler(this.ColorSettingForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
             this.panel2.ResumeLayout(false);
@@ -198,13 +203,13 @@
         private System.Windows.Forms.Panel panel2;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox HighlightColorComboBox;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox BackGroundColorComboBox;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox CharColorComboBox;
         private System.Windows.Forms.Button CancelButton;
     }
 }

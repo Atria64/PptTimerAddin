@@ -92,6 +92,7 @@
             // 
             this.ColorSetButton.Label = "色の設定";
             this.ColorSetButton.Name = "ColorSetButton";
+            this.ColorSetButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ColorSetButton_Click);
             // 
             // Ribbon
             // 

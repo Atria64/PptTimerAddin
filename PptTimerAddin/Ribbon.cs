@@ -46,5 +46,11 @@ namespace PptTimerAddin
                 editBox.Text = "";
             }
         }
+
+        private void ColorSetButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            var f = new ColorSettingForm();
+            f.Show();
+        }
     }
 }
