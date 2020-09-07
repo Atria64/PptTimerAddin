@@ -13,7 +13,8 @@ namespace PptTimerAddin
 {
     public partial class ColorSettingForm : Form
     {
-        private List<string> colors = new List<string>{ "Black", "White","Red" };
+        private List<string> colors = new List<string>{ "Black", "White","Red","Blue","SkyBlue"
+                                                       ,"Pink", "Green"};
         public ColorSettingForm()
         {
             InitializeComponent();
@@ -31,21 +32,47 @@ namespace PptTimerAddin
 
         private void CharColorComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Settings.Default.CharColor = CharColorComboBox.SelectedItem.ToString();
-            Settings.Default.Save();
+            UpdatePreview();
         }
 
         private void BackGroundColorComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Settings.Default.BackGroundColor = BackGroundColorComboBox.SelectedItem.ToString();
-            Settings.Default.Save();
+            UpdatePreview();
         }
 
         private void HighlightColorComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            Settings.Default.HighlightColor = HighlightColorComboBox.SelectedItem.ToString();
-            Settings.Default.Save();
+            UpdatePreview();
         }
 
+        private void UpdatePreview()
+        {
+            PreviewLabel.ForeColor = Color.FromName(CharColorComboBox.Text);
+            PreviewLabel.BackColor = Color.FromName(BackGroundColorComboBox.Text);
+        }
+
+        private void ApplyButton_Click(object sender, EventArgs e)
+        {
+            Settings.Default.CharColor = CharColorComboBox.SelectedItem.ToString();
+            Settings.Default.BackGroundColor = BackGroundColorComboBox.SelectedItem.ToString();
+            Settings.Default.HighlightColor = HighlightColorComboBox.SelectedItem.ToString();
+            Settings.Default.Save();
+            this.Close();
+        }
+
+        private void CancelButton_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void PreviewLabel_MouseEnter(object sender, EventArgs e)
+        {
+            PreviewLabel.ForeColor = Color.FromName(HighlightColorComboBox.Text);
+        }
+
+        private void PreviewLabel_MouseLeave(object sender, EventArgs e)
+        {
+            PreviewLabel.ForeColor = Color.FromName(CharColorComboBox.Text);
+        }
     }
 }
