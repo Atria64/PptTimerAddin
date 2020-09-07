@@ -6,6 +6,7 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.PowerPoint;
+using PptTimerAddin.Properties;
 
 namespace PptTimerAddin
 {
@@ -24,7 +25,7 @@ namespace PptTimerAddin
 
         private void PresentationStart(SlideShowWindow Wn)
         {
-            if (Ribbon1.PresenTimerMode)
+            if (Settings.Default.PresenTimerMode)
             {
                 form = new Form1();
                 form.Show();
@@ -34,7 +35,7 @@ namespace PptTimerAddin
         {
             try
             {
-                if (Ribbon1.PresenTimerMode)
+                if (Settings.Default.PresenTimerMode)
                 {
                     form.Close();
                 }

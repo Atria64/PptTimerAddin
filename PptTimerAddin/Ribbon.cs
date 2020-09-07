@@ -4,12 +4,12 @@ using System.Diagnostics.Contracts;
 using System.Linq;
 using System.Text;
 using Microsoft.Office.Tools.Ribbon;
+using PptTimerAddin.Properties;
 
 namespace PptTimerAddin
 {
-    public partial class Ribbon1
+    public partial class Ribbon
     {
-        public static bool PresenTimerMode = false;
         public static int setMinTime = -1;
         private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
         {
@@ -22,13 +22,14 @@ namespace PptTimerAddin
             if (checkBox.Checked)
             {
                 editBox.Visible = true;
-                PresenTimerMode = true;
+                Settings.Default.PresenTimerMode = true;
             }
             else
             {
                 editBox.Visible = false;
-                PresenTimerMode = false;
+                Settings.Default.PresenTimerMode = false;
             }
+            Properties.Settings.Default.Save();
         }
 
         private void editBox_TextChanged(object sender, RibbonControlEventArgs e)

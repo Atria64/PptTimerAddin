@@ -12,7 +12,7 @@ namespace PptTimerAddin
 {
     public partial class Form1 : Form
     {
-        private int secTime = Ribbon1.setMinTime * 60;
+        private int secTime = Ribbon.setMinTime * 60;
         public Form1()
         {
             InitializeComponent();

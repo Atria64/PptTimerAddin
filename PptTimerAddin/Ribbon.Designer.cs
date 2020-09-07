@@ -1,13 +1,13 @@
 ﻿namespace PptTimerAddin
 {
-    partial class Ribbon1 : Microsoft.Office.Tools.Ribbon.RibbonBase
+    partial class Ribbon : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
         /// <summary>
         /// 必要なデザイナー変数です。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        public Ribbon1()
+        public Ribbon()
             : base(Globals.Factory.GetRibbonFactory())
         {
             InitializeComponent();
@@ -55,12 +55,12 @@
             this.group1.Items.Add(this.checkBox);
             this.group1.Items.Add(this.editBox);
             this.group1.Items.Add(this.button1);
-            this.group1.Label = "LTタイマー制御";
+            this.group1.Label = "プレゼンタイマー制御";
             this.group1.Name = "group1";
             // 
             // checkBox
             // 
-            this.checkBox.Label = "LTタイマー有効化";
+            this.checkBox.Label = "プレゼンタイマー有効化";
             this.checkBox.Name = "checkBox";
             this.checkBox.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.checkBox_Click);
             // 
@@ -78,9 +78,9 @@
             this.button1.Label = "";
             this.button1.Name = "button1";
             // 
-            // Ribbon1
+            // Ribbon
             // 
-            this.Name = "Ribbon1";
+            this.Name = "Ribbon";
             this.RibbonType = "Microsoft.PowerPoint.Presentation";
             this.Tabs.Add(this.tab1);
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.Ribbon1_Load);
@@ -103,9 +103,9 @@
 
     partial class ThisRibbonCollection
     {
-        internal Ribbon1 Ribbon1
+        internal Ribbon Ribbon1
         {
-            get { return this.GetRibbon<Ribbon1>(); }
+            get { return this.GetRibbon<Ribbon>(); }
         }
     }
 }
