@@ -1,0 +1,2 @@
+# PptTimerAddin
+PowerPointのプレゼンテーションにタイマーを追加するアドオン
