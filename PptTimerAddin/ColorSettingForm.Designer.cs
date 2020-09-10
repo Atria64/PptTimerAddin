@@ -189,7 +189,11 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(248, 386);
             this.Controls.Add(this.panel1);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.MaximizeBox = false;
+            this.MinimizeBox = false;
             this.Name = "ColorSettingForm";
+            this.ShowIcon = false;
             this.Text = "ColorSettingForm";
             this.Load += new System.EventHandler(this.ColorSettingForm_Load);
             this.panel1.ResumeLayout(false);

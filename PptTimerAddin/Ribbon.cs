@@ -50,7 +50,8 @@ namespace PptTimerAddin
         private void ColorSetButton_Click(object sender, RibbonControlEventArgs e)
         {
             var f = new ColorSettingForm();
-            f.Show();
+            f.ShowDialog();
+            f.Dispose();
         }
     }
 }

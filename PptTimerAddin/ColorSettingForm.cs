@@ -19,9 +19,13 @@ namespace PptTimerAddin
         {
             InitializeComponent();
         }
-
         private void ColorSettingForm_Load(object sender, EventArgs e)
         {
+            LoadDatas();
+        }
+        private void LoadDatas()
+        {
+            //Load colors
             CharColorComboBox.Items.AddRange(colors.ToArray());
             CharColorComboBox.SelectedItem = Settings.Default.CharColor;
             BackGroundColorComboBox.Items.AddRange(colors.ToArray());
