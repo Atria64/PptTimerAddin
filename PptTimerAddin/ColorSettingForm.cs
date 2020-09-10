@@ -13,8 +13,8 @@ namespace PptTimerAddin
 {
     public partial class ColorSettingForm : Form
     {
-        private List<string> colors = new List<string>{ "Black", "White","Red","Blue","SkyBlue"
-                                                       ,"Pink", "Green"};
+        private readonly List<string> colors = new List<string>{ "Black","White","Red","Orange","Yellow","GreenYellow",
+                                                        "Green","SkyBlue","Blue","DodgerBlue","SlateBlue","Violet","Pink"};
         public ColorSettingForm()
         {
             InitializeComponent();
@@ -53,6 +53,7 @@ namespace PptTimerAddin
 
         private void ApplyButton_Click(object sender, EventArgs e)
         {
+            //Save Settings
             Settings.Default.CharColor = CharColorComboBox.SelectedItem.ToString();
             Settings.Default.BackGroundColor = BackGroundColorComboBox.SelectedItem.ToString();
             Settings.Default.HighlightColor = HighlightColorComboBox.SelectedItem.ToString();
