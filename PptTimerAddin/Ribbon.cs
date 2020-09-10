@@ -15,21 +15,16 @@ namespace PptTimerAddin
         private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
         {
             //後でちゃんと実装
-            setMinTime = int.Parse(editBox.Text);//初期設定のロード
+            //初期設定のロード
+            setMinTime = int.Parse(editBox.Text);
+            checkBox.Checked = Settings.Default.PresenTimerMode;
+            editBox.Visible = Settings.Default.PresenTimerMode;
         }
 
         private void checkBox_Click(object sender, RibbonControlEventArgs e)
         {
-            if (checkBox.Checked)
-            {
-                editBox.Visible = true;
-                Settings.Default.PresenTimerMode = true;
-            }
-            else
-            {
-                editBox.Visible = false;
-                Settings.Default.PresenTimerMode = false;
-            }
+            editBox.Visible = checkBox.Checked;
+            Settings.Default.PresenTimerMode = checkBox.Checked;
             Properties.Settings.Default.Save();
         }
 
