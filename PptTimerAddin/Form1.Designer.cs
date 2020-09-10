@@ -37,9 +37,9 @@
             // 
             this.timeLabel.Font = new System.Drawing.Font("ＭＳ Ｐゴシック", 72F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.timeLabel.ForeColor = System.Drawing.Color.White;
-            this.timeLabel.Location = new System.Drawing.Point(-2, 2);
+            this.timeLabel.Location = new System.Drawing.Point(-2, -8);
             this.timeLabel.Name = "timeLabel";
-            this.timeLabel.Size = new System.Drawing.Size(256, 97);
+            this.timeLabel.Size = new System.Drawing.Size(256, 110);
             this.timeLabel.TabIndex = 0;
             this.timeLabel.Text = "7:00";
             this.timeLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
