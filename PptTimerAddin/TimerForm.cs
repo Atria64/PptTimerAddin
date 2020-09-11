@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PptTimerAddin.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -10,22 +11,31 @@ using System.Windows.Forms;
 
 namespace PptTimerAddin
 {
-    public partial class Form1 : Form
+    public partial class TimerForm : Form
     {
-        private int secTime = Ribbon1.setMinTime * 60;
-        public Form1()
+        private int secTime = Ribbon.setMinTime * 60;
+        public TimerForm()
         {
             InitializeComponent();
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            timeLabel.DoubleClick += TimerControl;
             //配置変更系/-----
             timeLabel.MouseDown += new MouseEventHandler(MouseDown);
             timeLabel.MouseMove += new MouseEventHandler(MouseMove);
             //----------------
-            timer.Enabled = true; 
+            
+            timer.Enabled = Settings.Default.AutoTimerStartMode;
+            if (timer.Enabled)
+            {
+                timeLabel.ForeColor = Color.FromName(Settings.Default.CharColor);
+            }
+            else timeLabel.ForeColor = Color.FromName(Settings.Default.HighlightColor);
+
             timeLabel.Text = CalLabelTime();
+            timeLabel.BackColor = Color.FromName(Settings.Default.BackGroundColor);
         }
 
         private string CalLabelTime()
@@ -37,11 +47,21 @@ namespace PptTimerAddin
         private void timer_Tick(object sender, EventArgs e)
         {
             if (secTime > 0)secTime--;
-            else
+            if (secTime <= 0)
             {
-                timeLabel.ForeColor = Color.Red;
+                timeLabel.ForeColor = Color.FromName(Settings.Default.HighlightColor); ;
             }
             timeLabel.Text = CalLabelTime();
+        }
+
+        private void TimerControl(object sender,EventArgs e)
+        {
+            if (secTime <= 0) return;
+            timer.Enabled = !timer.Enabled;
+            if (timer.Enabled)
+            {
+                timeLabel.ForeColor = Color.FromName(Settings.Default.CharColor);
+            }else timeLabel.ForeColor = Color.FromName(Settings.Default.HighlightColor);
         }
 
         //配置変更系-------

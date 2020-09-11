@@ -1,13 +1,13 @@
 ﻿namespace PptTimerAddin
 {
-    partial class Ribbon1 : Microsoft.Office.Tools.Ribbon.RibbonBase
+    partial class Ribbon : Microsoft.Office.Tools.Ribbon.RibbonBase
     {
         /// <summary>
         /// 必要なデザイナー変数です。
         /// </summary>
         private System.ComponentModel.IContainer components = null;
 
-        public Ribbon1()
+        public Ribbon()
             : base(Globals.Factory.GetRibbonFactory())
         {
             InitializeComponent();
@@ -39,14 +39,20 @@
             this.checkBox = this.Factory.CreateRibbonCheckBox();
             this.editBox = this.Factory.CreateRibbonEditBox();
             this.button1 = this.Factory.CreateRibbonButton();
+            this.group2 = this.Factory.CreateRibbonGroup();
+            this.AutoTimerCheckBox = this.Factory.CreateRibbonCheckBox();
+            this.ColorSetButton = this.Factory.CreateRibbonButton();
+            this.SupportLinkButton = this.Factory.CreateRibbonButton();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
+            this.group2.SuspendLayout();
             this.SuspendLayout();
             // 
             // tab1
             // 
             this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tab1.Groups.Add(this.group1);
+            this.tab1.Groups.Add(this.group2);
             this.tab1.Label = "TabAddIns";
             this.tab1.Name = "tab1";
             // 
@@ -55,12 +61,12 @@
             this.group1.Items.Add(this.checkBox);
             this.group1.Items.Add(this.editBox);
             this.group1.Items.Add(this.button1);
-            this.group1.Label = "LTタイマー制御";
+            this.group1.Label = "プレゼンタイマー制御";
             this.group1.Name = "group1";
             // 
             // checkBox
             // 
-            this.checkBox.Label = "LTタイマー有効化";
+            this.checkBox.Label = "プレゼンタイマー有効化";
             this.checkBox.Name = "checkBox";
             this.checkBox.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.checkBox_Click);
             // 
@@ -78,9 +84,35 @@
             this.button1.Label = "";
             this.button1.Name = "button1";
             // 
-            // Ribbon1
+            // group2
             // 
-            this.Name = "Ribbon1";
+            this.group2.Items.Add(this.AutoTimerCheckBox);
+            this.group2.Items.Add(this.ColorSetButton);
+            this.group2.Items.Add(this.SupportLinkButton);
+            this.group2.Label = "各種設定・その他";
+            this.group2.Name = "group2";
+            // 
+            // AutoTimerCheckBox
+            // 
+            this.AutoTimerCheckBox.Label = "プレゼンテーション開始時に自動でタイマーを開始する";
+            this.AutoTimerCheckBox.Name = "AutoTimerCheckBox";
+            this.AutoTimerCheckBox.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.AutoTimerCheckBox_Click);
+            // 
+            // ColorSetButton
+            // 
+            this.ColorSetButton.Label = "タイマーの色の設定";
+            this.ColorSetButton.Name = "ColorSetButton";
+            this.ColorSetButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ColorSetButton_Click);
+            // 
+            // SupportLinkButton
+            // 
+            this.SupportLinkButton.Label = "サポート(GitHub)";
+            this.SupportLinkButton.Name = "SupportLinkButton";
+            this.SupportLinkButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.SupportLinkButton_Click);
+            // 
+            // Ribbon
+            // 
+            this.Name = "Ribbon";
             this.RibbonType = "Microsoft.PowerPoint.Presentation";
             this.Tabs.Add(this.tab1);
             this.Load += new Microsoft.Office.Tools.Ribbon.RibbonUIEventHandler(this.Ribbon1_Load);
@@ -88,6 +120,8 @@
             this.tab1.PerformLayout();
             this.group1.ResumeLayout(false);
             this.group1.PerformLayout();
+            this.group2.ResumeLayout(false);
+            this.group2.PerformLayout();
             this.ResumeLayout(false);
 
         }
@@ -99,13 +133,17 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonButton button1;
         internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox checkBox;
         internal Microsoft.Office.Tools.Ribbon.RibbonEditBox editBox;
+        internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton ColorSetButton;
+        internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox AutoTimerCheckBox;
+        internal Microsoft.Office.Tools.Ribbon.RibbonButton SupportLinkButton;
     }
 
     partial class ThisRibbonCollection
     {
-        internal Ribbon1 Ribbon1
+        internal Ribbon Ribbon1
         {
-            get { return this.GetRibbon<Ribbon1>(); }
+            get { return this.GetRibbon<Ribbon>(); }
         }
     }
 }
