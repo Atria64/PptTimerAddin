@@ -1,6 +1,6 @@
 ﻿namespace PptTimerAddin
 {
-    partial class Form1
+    partial class TimerForm
     {
         /// <summary>
         /// Required designer variable.

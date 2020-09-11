@@ -11,10 +11,10 @@ using System.Windows.Forms;
 
 namespace PptTimerAddin
 {
-    public partial class Form1 : Form
+    public partial class TimerForm : Form
     {
         private int secTime = Ribbon.setMinTime * 60;
-        public Form1()
+        public TimerForm()
         {
             InitializeComponent();
         }

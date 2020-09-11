@@ -12,7 +12,7 @@ namespace PptTimerAddin
 {
     public partial class ThisAddIn
     {
-        private Form1 form;
+        private TimerForm form;
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             Application.SlideShowBegin += PresentationStart;
@@ -27,7 +27,7 @@ namespace PptTimerAddin
         {
             if (Settings.Default.PresenTimerMode)
             {
-                form = new Form1();
+                form = new TimerForm();
                 form.Show();
             }
         }
