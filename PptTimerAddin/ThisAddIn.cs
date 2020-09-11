@@ -6,12 +6,13 @@ using System.Windows.Forms;
 using System.Xml.Linq;
 using Microsoft.Office.Core;
 using Microsoft.Office.Interop.PowerPoint;
+using PptTimerAddin.Properties;
 
 namespace PptTimerAddin
 {
     public partial class ThisAddIn
     {
-        private Form1 form;
+        private TimerForm form;
         private void ThisAddIn_Startup(object sender, System.EventArgs e)
         {
             Application.SlideShowBegin += PresentationStart;
@@ -24,9 +25,9 @@ namespace PptTimerAddin
 
         private void PresentationStart(SlideShowWindow Wn)
         {
-            if (Ribbon1.PresenTimerMode)
+            if (Settings.Default.PresenTimerMode)
             {
-                form = new Form1();
+                form = new TimerForm();
                 form.Show();
             }
         }
@@ -34,7 +35,7 @@ namespace PptTimerAddin
         {
             try
             {
-                if (Ribbon1.PresenTimerMode)
+                if (Settings.Default.PresenTimerMode)
                 {
                     form.Close();
                 }
