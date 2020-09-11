@@ -64,6 +64,10 @@ namespace PptTimerAddin
             {
                 this.Left += e.X - mousePoint.X;
                 this.Top += e.Y - mousePoint.Y;
+                //または、つぎのようにする
+                //this.Location = new Point(
+                //    this.Location.X + e.X - mousePoint.X,
+                //    this.Location.Y + e.Y - mousePoint.Y);
             }
         }
     }
