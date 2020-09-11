@@ -153,6 +153,12 @@
     can be found.
   -->
   <ItemGroup>
+    <Compile Include="ColorSettingForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="ColorSettingForm.Designer.cs">
+      <DependentUpon>ColorSettingForm.cs</DependentUpon>
+    </Compile>
     <Compile Include="Form1.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -162,6 +168,9 @@
     <Compile Include="Properties\AssemblyInfo.cs">
       <SubType>Code</SubType>
     </Compile>
+    <EmbeddedResource Include="ColorSettingForm.resx">
+      <DependentUpon>ColorSettingForm.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>

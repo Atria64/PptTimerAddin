@@ -34,5 +34,41 @@ namespace PptTimerAddin.Properties {
                 this["PresenTimerMode"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("White")]
+        public string CharColor {
+            get {
+                return ((string)(this["CharColor"]));
+            }
+            set {
+                this["CharColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Black")]
+        public string BackGroundColor {
+            get {
+                return ((string)(this["BackGroundColor"]));
+            }
+            set {
+                this["BackGroundColor"] = value;
+            }
+        }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("Red")]
+        public string HighlightColor {
+            get {
+                return ((string)(this["HighlightColor"]));
+            }
+            set {
+                this["HighlightColor"] = value;
+            }
+        }
     }
 }

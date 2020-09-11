@@ -1,4 +1,5 @@
-﻿using System;
+﻿using PptTimerAddin.Properties;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -26,6 +27,8 @@ namespace PptTimerAddin
             //----------------
             timer.Enabled = true; 
             timeLabel.Text = CalLabelTime();
+            timeLabel.ForeColor = Color.FromName(Settings.Default.CharColor);
+            timeLabel.BackColor = Color.FromName(Settings.Default.BackGroundColor);
         }
 
         private string CalLabelTime()
@@ -37,9 +40,9 @@ namespace PptTimerAddin
         private void timer_Tick(object sender, EventArgs e)
         {
             if (secTime > 0)secTime--;
-            else
+            if (secTime <= 0)
             {
-                timeLabel.ForeColor = Color.Red;
+                timeLabel.ForeColor = Color.FromName(Settings.Default.HighlightColor); ;
             }
             timeLabel.Text = CalLabelTime();
         }
