@@ -55,5 +55,9 @@ namespace PptTimerAddin
             f.Dispose();
         }
 
+        private void SupportLinkButton_Click(object sender, RibbonControlEventArgs e)
+        {
+            System.Diagnostics.Process.Start("https://github.com/Atria64/PptTimerAddin");
+        }
     }
 }
