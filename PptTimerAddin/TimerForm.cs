@@ -21,13 +21,20 @@ namespace PptTimerAddin
 
         private void Form1_Load(object sender, EventArgs e)
         {
+            timeLabel.DoubleClick += TimerControl;
             //配置変更系/-----
             timeLabel.MouseDown += new MouseEventHandler(MouseDown);
             timeLabel.MouseMove += new MouseEventHandler(MouseMove);
             //----------------
-            timer.Enabled = true; 
+            
+            timer.Enabled = Settings.Default.AutoTimerStartMode;
+            if (timer.Enabled)
+            {
+                timeLabel.ForeColor = Color.FromName(Settings.Default.CharColor);
+            }
+            else timeLabel.ForeColor = Color.FromName(Settings.Default.HighlightColor);
+
             timeLabel.Text = CalLabelTime();
-            timeLabel.ForeColor = Color.FromName(Settings.Default.CharColor);
             timeLabel.BackColor = Color.FromName(Settings.Default.BackGroundColor);
         }
 
@@ -45,6 +52,15 @@ namespace PptTimerAddin
                 timeLabel.ForeColor = Color.FromName(Settings.Default.HighlightColor); ;
             }
             timeLabel.Text = CalLabelTime();
+        }
+
+        private void TimerControl(object sender,EventArgs e)
+        {
+            timer.Enabled = !timer.Enabled;
+            if (timer.Enabled)
+            {
+                timeLabel.ForeColor = Color.FromName(Settings.Default.CharColor);
+            }else timeLabel.ForeColor = Color.FromName(Settings.Default.HighlightColor);
         }
 
         //配置変更系-------
