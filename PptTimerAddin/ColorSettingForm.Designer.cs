@@ -194,7 +194,7 @@
             this.MinimizeBox = false;
             this.Name = "ColorSettingForm";
             this.ShowIcon = false;
-            this.Text = "ColorSettingForm";
+            this.Text = "タイマーの色の設定";
             this.Load += new System.EventHandler(this.ColorSettingForm_Load);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
