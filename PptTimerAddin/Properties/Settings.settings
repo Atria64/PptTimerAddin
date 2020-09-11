@@ -14,5 +14,8 @@
     <Setting Name="HighlightColor" Type="System.String" Scope="User">
       <Value Profile="(Default)">Red</Value>
     </Setting>
+    <Setting Name="AutoTimerStartMode" Type="System.Boolean" Scope="User">
+      <Value Profile="(Default)">False</Value>
+    </Setting>
   </Settings>
 </SettingsFile>

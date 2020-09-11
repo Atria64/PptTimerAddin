@@ -40,8 +40,8 @@
             this.editBox = this.Factory.CreateRibbonEditBox();
             this.button1 = this.Factory.CreateRibbonButton();
             this.group2 = this.Factory.CreateRibbonGroup();
+            this.AutoTimerCheckBox = this.Factory.CreateRibbonCheckBox();
             this.ColorSetButton = this.Factory.CreateRibbonButton();
-            this.checkBox1 = this.Factory.CreateRibbonCheckBox();
             this.tab1.SuspendLayout();
             this.group1.SuspendLayout();
             this.group2.SuspendLayout();
@@ -85,21 +85,22 @@
             // 
             // group2
             // 
-            this.group2.Items.Add(this.checkBox1);
+            this.group2.Items.Add(this.AutoTimerCheckBox);
             this.group2.Items.Add(this.ColorSetButton);
             this.group2.Label = "各種設定・その他";
             this.group2.Name = "group2";
+            // 
+            // AutoTimerCheckBox
+            // 
+            this.AutoTimerCheckBox.Label = "プレゼンテーション開始時に自動でタイマーを開始する";
+            this.AutoTimerCheckBox.Name = "AutoTimerCheckBox";
+            this.AutoTimerCheckBox.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.AutoTimerCheckBox_Click);
             // 
             // ColorSetButton
             // 
             this.ColorSetButton.Label = "タイマーの色の設定";
             this.ColorSetButton.Name = "ColorSetButton";
             this.ColorSetButton.Click += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.ColorSetButton_Click);
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.Label = "プレゼンテーション開始時に自動でタイマーを開始する";
-            this.checkBox1.Name = "checkBox1";
             // 
             // Ribbon
             // 
@@ -126,7 +127,7 @@
         internal Microsoft.Office.Tools.Ribbon.RibbonEditBox editBox;
         internal Microsoft.Office.Tools.Ribbon.RibbonGroup group2;
         internal Microsoft.Office.Tools.Ribbon.RibbonButton ColorSetButton;
-        internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox checkBox1;
+        internal Microsoft.Office.Tools.Ribbon.RibbonCheckBox AutoTimerCheckBox;
     }
 
     partial class ThisRibbonCollection

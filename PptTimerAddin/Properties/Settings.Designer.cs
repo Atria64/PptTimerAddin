@@ -70,5 +70,17 @@ namespace PptTimerAddin.Properties {
                 this["HighlightColor"] = value;
             }
         }
+        
+        [global::System.Configuration.UserScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.DefaultSettingValueAttribute("False")]
+        public bool AutoTimerStartMode {
+            get {
+                return ((bool)(this["AutoTimerStartMode"]));
+            }
+            set {
+                this["AutoTimerStartMode"] = value;
+            }
+        }
     }
 }

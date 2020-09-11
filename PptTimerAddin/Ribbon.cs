@@ -19,12 +19,18 @@ namespace PptTimerAddin
             setMinTime = int.Parse(editBox.Text);
             checkBox.Checked = Settings.Default.PresenTimerMode;
             editBox.Visible = Settings.Default.PresenTimerMode;
+            AutoTimerCheckBox.Checked = Settings.Default.AutoTimerStartMode;
         }
 
         private void checkBox_Click(object sender, RibbonControlEventArgs e)
         {
             editBox.Visible = checkBox.Checked;
             Settings.Default.PresenTimerMode = checkBox.Checked;
+            Properties.Settings.Default.Save();
+        }
+        private void AutoTimerCheckBox_Click(object sender, RibbonControlEventArgs e)
+        {
+            Settings.Default.AutoTimerStartMode = AutoTimerCheckBox.Checked;
             Properties.Settings.Default.Save();
         }
 
@@ -48,5 +54,6 @@ namespace PptTimerAddin
             f.ShowDialog();
             f.Dispose();
         }
+
     }
 }
