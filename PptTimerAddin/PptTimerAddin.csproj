@@ -211,10 +211,11 @@
     <SignManifests>true</SignManifests>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestKeyFile>PptTimerAddin_TemporaryKey.pfx</ManifestKeyFile>
+    <ManifestKeyFile>
+    </ManifestKeyFile>
   </PropertyGroup>
   <PropertyGroup>
-    <ManifestCertificateThumbprint>D17124D3ADD3C8B65C0F369AF4603064EB5B3CD9</ManifestCertificateThumbprint>
+    <ManifestCertificateThumbprint>6B91EE485B950935A8012F007FDFA7CE914AF408</ManifestCertificateThumbprint>
   </PropertyGroup>
   <!-- Include the build rules for a C# project. -->
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
