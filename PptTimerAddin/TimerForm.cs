@@ -56,6 +56,7 @@ namespace PptTimerAddin
 
         private void TimerControl(object sender,EventArgs e)
         {
+            if (secTime <= 0) return;
             timer.Enabled = !timer.Enabled;
             if (timer.Enabled)
             {
