@@ -75,7 +75,6 @@
             this.editBox.Label = "時間(分)";
             this.editBox.Name = "editBox";
             this.editBox.ScreenTip = "1<= x <= 100";
-            this.editBox.Text = "5";
             this.editBox.Visible = false;
             this.editBox.TextChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.editBox_TextChanged);
             // 
