@@ -11,12 +11,11 @@ namespace PptTimerAddin
 {
     public partial class Ribbon
     {
-        public static int setMinTime = -1;
+        public static int presentationTime = 5;
         private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
         {
-            //後でちゃんと実装
             //初期設定のロード
-            setMinTime = int.Parse(editBox.Text);
+            editBox.Text = presentationTime.ToString();
             checkBox.Checked = Settings.Default.PresenTimerMode;
             editBox.Visible = Settings.Default.PresenTimerMode;
             AutoTimerCheckBox.Checked = Settings.Default.AutoTimerStartMode;
@@ -40,7 +39,7 @@ namespace PptTimerAddin
             string s = editBox.Text;
             if (int.TryParse(s,out tmp) &&(0 < tmp && tmp <= 100))
             {
-                setMinTime = tmp;
+                presentationTime = tmp;
             }
             else
             {
