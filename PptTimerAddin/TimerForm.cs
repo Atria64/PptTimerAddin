@@ -13,7 +13,7 @@ namespace PptTimerAddin
 {
     public partial class TimerForm : Form
     {
-        private int secTime = Ribbon.presentationTime * 60;
+        private int secTime = Settings.Default.PresentationTime * 60;
         public TimerForm()
         {
             InitializeComponent();

@@ -11,11 +11,10 @@ namespace PptTimerAddin
 {
     public partial class Ribbon
     {
-        public static int presentationTime = 5;
         private void Ribbon1_Load(object sender, RibbonUIEventArgs e)
         {
             //初期設定のロード
-            editBox.Text = presentationTime.ToString();
+            editBox.Text = Settings.Default.PresentationTime.ToString();
             checkBox.Checked = Settings.Default.PresenTimerMode;
             editBox.Visible = Settings.Default.PresenTimerMode;
             AutoTimerCheckBox.Checked = Settings.Default.AutoTimerStartMode;
@@ -25,12 +24,12 @@ namespace PptTimerAddin
         {
             editBox.Visible = checkBox.Checked;
             Settings.Default.PresenTimerMode = checkBox.Checked;
-            Properties.Settings.Default.Save();
+            Settings.Default.Save();
         }
         private void AutoTimerCheckBox_Click(object sender, RibbonControlEventArgs e)
         {
             Settings.Default.AutoTimerStartMode = AutoTimerCheckBox.Checked;
-            Properties.Settings.Default.Save();
+            Settings.Default.Save();
         }
 
         private void editBox_TextChanged(object sender, RibbonControlEventArgs e)
@@ -39,7 +38,8 @@ namespace PptTimerAddin
             string s = editBox.Text;
             if (int.TryParse(s,out tmp) &&(0 < tmp && tmp <= 100))
             {
-                presentationTime = tmp;
+                Settings.Default.PresentationTime = tmp;
+                Settings.Default.Save();
             }
             else
             {
