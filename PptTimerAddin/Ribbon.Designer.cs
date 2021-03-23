@@ -53,7 +53,7 @@
             this.tab1.ControlId.ControlIdType = Microsoft.Office.Tools.Ribbon.RibbonControlIdType.Office;
             this.tab1.Groups.Add(this.group1);
             this.tab1.Groups.Add(this.group2);
-            this.tab1.Label = "TabAddIns";
+            this.tab1.Label = "PptTimer";
             this.tab1.Name = "tab1";
             // 
             // group1
@@ -75,7 +75,7 @@
             this.editBox.Label = "時間(分)";
             this.editBox.Name = "editBox";
             this.editBox.ScreenTip = "1<= x <= 100";
-            this.editBox.Text = "5";
+            this.editBox.Text = null;
             this.editBox.Visible = false;
             this.editBox.TextChanged += new Microsoft.Office.Tools.Ribbon.RibbonControlEventHandler(this.editBox_TextChanged);
             // 
